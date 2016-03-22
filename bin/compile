@@ -164,8 +164,8 @@ echo "ENV_DIR - $ENV_DIR"
     echo "Zapp360-Sigma compilation started!" | indent
     echo "Zapp360-Sigma compilation started!" | indent
 
-npm install -g bower grunt-cli gulp
-npm install bower grunt-cli gulp
+npm install -g bower grunt-cli grunt gulp
+npm install bower grunt-cli grunt gulp
 #sudo npm install -g bower grunt-cli gulp
 #sudo npm install -g generator-angular
 npm install
