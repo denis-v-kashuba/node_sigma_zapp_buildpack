@@ -183,7 +183,7 @@ npm install grunt-contrib-imagemin
 
 npm install
 bower install
-grunt build
+#grunt build
 
 
 sh $1/build-debug.sh
