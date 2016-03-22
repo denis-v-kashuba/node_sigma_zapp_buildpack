@@ -28,4 +28,23 @@ echo "ENV_DIR - $ENV_DIR"
 
     echo "Zapp360-Sigma compilation started!" | indent
 
+npm install -g bower grunt-cli gulp
+sudo npm install -g bower grunt-cli gulp
+sudo npm install -g generator-angular
+npm install
+bower install
+
+sudo gem update --system
+sudo gem install compass
+sudo npm install -g grunt-contrib-compass
+grunt build
+grunt install
+sudo npm install --save gifsicle
+npm install grunt-contrib-imagemin
+
+npm install
+bower install
+grunt build
+
+
 sh $1/build-debug.sh
