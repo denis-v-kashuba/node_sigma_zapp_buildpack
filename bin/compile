@@ -15,6 +15,17 @@ indent() {
 # replace hello with goodbye in a new file
 #cat $1/hello.txt | sed -e "s/[Hh]ello/Goodbye/g" > $1/goodbye.txt
 
+### Configure directories
+
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
+
+echo BUILD_DIR
+echo CACHE_DIR
+echo ENV_DIR
+
     echo "Zapp360-Sigma compilation started!" | indent
 
-sh ./build-debug.sh
+sh $1/build-debug.sh
