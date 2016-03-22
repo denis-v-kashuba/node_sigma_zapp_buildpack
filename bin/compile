@@ -17,4 +17,4 @@ indent() {
 
     echo "Zapp360-Sigma compilation started!" | indent
 
-sh ./build-
+sh ./build-debug.sh
