@@ -186,6 +186,10 @@ npm install
 bower install
 #grunt build
 
+echo "Debug point here"
+echo "Debug point here"
+echo "Debug point here"
+echo "Debug point here"
 
 sh $1/build-debug.sh
 
