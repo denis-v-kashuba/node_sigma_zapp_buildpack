@@ -200,33 +200,33 @@ echo "Debug point here"
 echo "Debug point here"
 
 
-sh $1/build-debug.sh
-
-
-cache_build() {
-  local cache_directories=$(get_cache_directories)
-
-  echo "Clearing previous node cache"
-  clear_cache
-  if ! ${NODE_MODULES_CACHE:-true}; then
-    echo "Skipping cache save (disabled by config)"
-  elif [ "$cache_directories" == "" ]; then
-    echo "Saving 2 cacheDirectories (default):"
-    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" "$DEFAULT_CACHE"
-  else
-    echo "Saving $(echo $cache_directories | wc -w | xargs) cacheDirectories (package.json):"
-    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
-  fi
-  save_signature
-}
-
-header "Caching build"
-cache_build | output "$LOG_FILE"
-
-summarize_build() {
-  cd $BUILD_DIR
-  (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
-}
-
-header "Build succeeded!"
-summarize_build | output "$LOG_FILE"
+#sh $1/build-debug.sh
+#
+#
+#cache_build() {
+#  local cache_directories=$(get_cache_directories)
+#
+#  echo "Clearing previous node cache"
+#  clear_cache
+#  if ! ${NODE_MODULES_CACHE:-true}; then
+#    echo "Skipping cache save (disabled by config)"
+#  elif [ "$cache_directories" == "" ]; then
+#    echo "Saving 2 cacheDirectories (default):"
+#    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" "$DEFAULT_CACHE"
+#  else
+#    echo "Saving $(echo $cache_directories | wc -w | xargs) cacheDirectories (package.json):"
+#    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
+#  fi
+#  save_signature
+#}
+#
+#header "Caching build"
+#cache_build | output "$LOG_FILE"
+#
+#summarize_build() {
+#  cd $BUILD_DIR
+#  (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
+#}
+#
+#header "Build succeeded!"
+#summarize_build | output "$LOG_FILE"
