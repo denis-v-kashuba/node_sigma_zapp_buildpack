@@ -289,13 +289,17 @@ echo Running grunt build tool \for self service...
 
 cd $1/app/demotool/
 echo Running grunt build tool \for client service...
+
+npm install
+bower install
+
 grunt build
 #cd ../
 
-cd $1/app/tagpreview/
-echo Running grunt build tool \for tagpreview...
+#cd $1/app/tagpreview/
+#echo Running grunt build tool \for tagpreview...
 #grunt build
-#cd ../../
+cd ../../
 
 echo Running grunt build tool \for console...
 grunt build
