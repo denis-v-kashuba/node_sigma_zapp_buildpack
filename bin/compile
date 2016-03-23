@@ -180,7 +180,7 @@ npm install bower grunt-cli grunt gulp
 #sudo npm install -g grunt-contrib-compass
 gem update --system
 #gem install sass
-gem install -n /usr/local/bin compass
+gem install -n /app/vendor/ruby-2.3.0/bin/gem compass
 npm install -g grunt-contrib-compass
 #grunt build
 #grunt install
@@ -200,7 +200,7 @@ echo "Debug point here"
 
 #apt-get install ruby-compass
 
-#PATH=/var/lib/gems/2.3/bin:$PATH
+PATH=/app/vendor/ruby-2.3.0/bin/gem:$PATH
 #echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
 ruby -v
 compass -v
