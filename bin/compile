@@ -188,7 +188,8 @@ echo "Debug point here"
 #sudo gem install compass
 #sudo npm install -g grunt-contrib-compass
 gem update --system
-gem install compass
+gem install sass
+gem install -n /usr/local/bin compass
 npm install -g grunt-contrib-compass
 #grunt build
 #grunt install
@@ -206,9 +207,9 @@ echo "Debug point here"
 echo "Debug point here"
 
 
-apt-get install ruby-compass
+#apt-get install ruby-compass
 
-PATH=/var/lib/gems/2.3/bin:$PATH
+#PATH=/var/lib/gems/2.3/bin:$PATH
 #echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
 ruby -v
 compass -v
