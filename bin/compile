@@ -236,7 +236,119 @@ echo "Debug point here"
 #
 
 
-sh $1/build-buildpack.sh
+#sh $1/build-buildpack.sh
+
+echo Running grunt build tool...
+rm -r $1/dist/
+#rm -r app/selfservice/dist/
+rm -r $1/app/demotool/dist/
+#rm -r app/tagpreview/dist/
+
+echo Running jshint...
+
+jshintFILES="$1/server/controllers/
+$1/server/izolib/
+$1/server/lib
+$1/server/routes
+$1/app/scripts/
+$1/app/thirdParty
+$1/app/demotool/app/scripts
+$1/app/demotool/app/thirdParty"
+for f in $jshintFILES
+do
+    var=$(jshint "$f" | tail -1)
+    echo "
+    !+!
+    !+!
+    !+!+!
+    !+!+!+!
+    !+!+!+!+!
+    !+!+!+!+!+!
+    !+!+!+!+!+!+!
+    "
+    echo "!+!+!+!+!+!+!+! $var !+!+!+!+!+!+!+! in $f folder"
+    echo "
+    !+!+!+!+!+!+!
+    !+!+!+!+!+!
+    !+!+!+!+!
+    !+!+!+!
+    !+!+!
+    !+!
+    !+!
+    "
+done
+
+echo Running grunt build tool \for self service...
+
+cd $1/app/selfservice/
+#grunt build
+#cd ../
+
+cd $1/demotool/
+echo Running grunt build tool \for client service...
+grunt build
+#cd ../
+
+cd $1/tagpreview/
+echo Running grunt build tool \for tagpreview...
+#grunt build
+#cd ../../
+
+echo Running grunt build tool \for console...
+grunt build
+echo Copying dist SS...
+cp -avR $1/app/selfservice/dist $1/dist/selfservice
+
+echo Copying dist clientservice...
+cp -avR $1/app/demotool/dist $1/dist/demotool
+cp -avR $1/app/demotool/app/assets $1/dist/demotool/assets
+mkdir -p $1/dist/demotool/app/
+cp -avR $1/app/demotool/app/assets $1/dist/demotool/app/
+cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_components/intl-tel-input
+
+echo Copying dist externaltagpreview...
+#cp -avR app/tagpreview/dist dist/tagpreview
+
+echo Copying index SS...
+cp $1/dist/selfservice/index.html $1/server/views/selfservice.ejs
+
+echo Copying index clientservice...
+cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
+
+echo Copying index externaltagpreview...
+cp $1/dist/tagpreview/index.html $1/server/views/tagpreview.ejs
+
+echo Copying tag preview...
+cp -avR $1/app/externalTagPreview/dist $1/dist/externalTagPreview
+
+echo Copying index tag preview...
+cp $1/dist/externalTagPreview/tag_preview.html $1/server/views/tag_preview.ejs
+
+echo Copying index...
+cp $1/dist/index.html $1/server/views/index.ejs
+
+echo Copying login...
+cp $1/dist/login.html $1/server/views/login.ejs
+
+echo Copying reset...
+cp $1/dist/reset.html $1/server/views/reset.ejs
+
+echo Copying forgot...
+cp $1/dist/forgot.html $1/server/views/forgot.ejs
+
+echo Copying request-access...
+cp $1/dist/request-access.html $1/server/views/request-access.ejs
+
+echo Copying reset-sent...
+cp $1/dist/reset-sent.html $1/server/views/reset-sent.ejs
+
+# izo validators
+echo Copying validators...
+cp $1/app/thirdParty/validators/company.js $1/server/izolib/validators/company.js
+cp $1/app/thirdParty/validators/campaign.js $1/server/izolib/validators/campaign.js
+cp $1/app/thirdParty/validators/user.js $1/server/izolib/validators/user.js
+cp $1/app/thirdParty/validators/advertiser.js $1/server/izolib/validators/advertiser.js
+
 
 #cache_build() {
 #  local cache_directories=$(get_cache_directories)
