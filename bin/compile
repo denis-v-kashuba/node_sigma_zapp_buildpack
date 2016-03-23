@@ -283,16 +283,16 @@ rm -r $1/app/demotool/dist/
 
 echo Running grunt build tool \for self service...
 
-cd $1/app/selfservice/
+#cd $1/app/selfservice/
 #grunt build
 #cd ../
 
-cd $1/demotool/
+cd $1/app/demotool/
 echo Running grunt build tool \for client service...
 grunt build
 #cd ../
 
-cd $1/tagpreview/
+cd $1/app/tagpreview/
 echo Running grunt build tool \for tagpreview...
 #grunt build
 #cd ../../
