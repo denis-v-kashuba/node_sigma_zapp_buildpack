@@ -196,6 +196,9 @@ echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\
 echo "export PATH=\"\$HOME/.gem/ruby/2.3.0/bin:\$PATH\"" > $1/.profile.d/ruby.sh
 
 npm install -g grunt-contrib-compass
+
+npm install -g jshint
+
 ##grunt build
 ##grunt install
 npm install --save gifsicle
