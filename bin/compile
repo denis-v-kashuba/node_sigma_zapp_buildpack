@@ -136,21 +136,6 @@ indent() {
   sed -u 's/^/       /'
 }
 
-#echo "-----> Found a hello.txt"
-
-# if hello.txt is empty, abort the build
-#if [ ! -s $1/hello.txt ]; then
-#  echo "hello.txt was empty" | indent
-#  exit 1
-#fi
-
-# replace hello with goodbye in a new file
-#cat $1/hello.txt | sed -e "s/[Hh]ello/Goodbye/g" > $1/goodbye.txt
-
-#
-#
-#
-
 
     echo "Zapp360-Sigma compilation started!" | indent
     echo "Zapp360-Sigma compilation started!" | indent
@@ -170,18 +155,8 @@ echo "ENV_DIR - $ENV_DIR"
 
 npm install -g bower grunt-cli grunt gulp
 npm install bower grunt-cli grunt gulp
-#sudo npm install -g bower grunt-cli gulp
-#sudo npm install -g generator-angular
-#npm install
-#bower install
 
-#sudo gem update --system
-#sudo gem install compass
-#sudo npm install -g grunt-contrib-compass
 gem update --system
-##gem install sass
-##gem install -n /app/vendor/ruby-2.3.0/bin/gem compass
-##gem install compass
 
 # install compass
 echo "Installing Compass"
@@ -215,10 +190,6 @@ echo "Debug point here"
 echo "Debug point here"
 
 
-##apt-get install ruby-compass
-
-##PATH=/app/vendor/ruby-2.3.0/bin/gem:$PATH
-##echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
 ruby -v
 compass -v
 
@@ -238,54 +209,45 @@ echo "Debug point here"
 #
 #
 
-
-#sh $1/build-buildpack.sh
+##sh $1/build-buildpack.sh
 
 echo Running grunt build tool...
 rm -r $1/dist/
-#rm -r app/selfservice/dist/
 rm -r $1/app/demotool/dist/
-#rm -r app/tagpreview/dist/
 
-#echo Running jshint...
-#
-#jshintFILES="$1/server/controllers/
-#$1/server/izolib/
-#$1/server/lib
-#$1/server/routes
-#$1/app/scripts/
-#$1/app/thirdParty
-#$1/app/demotool/app/scripts
-#$1/app/demotool/app/thirdParty"
-#for f in $jshintFILES
-#do
-#    var=$(jshint "$f" | tail -1)
-#    echo "
-#    !+!
-#    !+!
-#    !+!+!
-#    !+!+!+!
-#    !+!+!+!+!
-#    !+!+!+!+!+!
-#    !+!+!+!+!+!+!
-#    "
-#    echo "!+!+!+!+!+!+!+! $var !+!+!+!+!+!+!+! in $f folder"
-#    echo "
-#    !+!+!+!+!+!+!
-#    !+!+!+!+!+!
-#    !+!+!+!+!
-#    !+!+!+!
-#    !+!+!
-#    !+!
-#    !+!
-#    "
-#done
+echo Running jshint...
 
-#echo Running grunt build tool \for self service...
-
-#cd $1/app/selfservice/
-#grunt build
-#cd ../
+jshintFILES="$1/server/controllers/
+$1/server/izolib/
+$1/server/lib
+$1/server/routes
+$1/app/scripts/
+$1/app/thirdParty
+$1/app/demotool/app/scripts
+$1/app/demotool/app/thirdParty"
+for f in $jshintFILES
+do
+    var=$(jshint "$f" | tail -1)
+    echo "
+    !+!
+    !+!
+    !+!+!
+    !+!+!+!
+    !+!+!+!+!
+    !+!+!+!+!+!
+    !+!+!+!+!+!+!
+    "
+    echo "!+!+!+!+!+!+!+! $var !+!+!+!+!+!+!+! in $f folder"
+    echo "
+    !+!+!+!+!+!+!
+    !+!+!+!+!+!
+    !+!+!+!+!
+    !+!+!+!
+    !+!+!
+    !+!
+    !+!
+    "
+done
 
 #
 # DT
@@ -303,18 +265,8 @@ grunt build
 # DT
 #
 
-#cd ../
-
-#cd $1/app/tagpreview/
-#echo Running grunt build tool \for tagpreview...
-#grunt build
-#cd ../../
-
 echo Running grunt build tool \for console...
 grunt build
-
-#echo Copying dist SS...
-#cp -avR $1/app/selfservice/dist $1/dist/selfservice
 
 #
 # DT
@@ -331,12 +283,6 @@ cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_c
 # DT
 #
 
-#echo Copying dist externaltagpreview...
-#cp -avR app/tagpreview/dist dist/tagpreview
-
-#echo Copying index SS...
-#cp $1/dist/selfservice/index.html $1/server/views/selfservice.ejs
-
 #
 # DT
 #
@@ -347,15 +293,6 @@ cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
 #
 # DT
 #
-
-#echo Copying index externaltagpreview...
-#cp $1/dist/tagpreview/index.html $1/server/views/tagpreview.ejs
-
-#echo Copying tag preview...
-#cp -avR $1/app/externalTagPreview/dist $1/dist/externalTagPreview
-
-#echo Copying index tag preview...
-#cp $1/dist/externalTagPreview/tag_preview.html $1/server/views/tag_preview.ejs
 
 echo Copying index...
 cp $1/dist/index.html $1/server/views/index.ejs
