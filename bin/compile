@@ -192,8 +192,8 @@ HOME=$1 gem install compass --user-install --no-rdoc --no-ri
 
 echo "Building runtime environment"
 mkdir -p $1/.profile.d
-echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
-echo "export PATH=\"\$HOME/.gem/ruby/2.3.0/bin:\$PATH\"" > $build_dir/.profile.d/ruby.sh
+echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $1/.profile.d/nodejs.sh
+echo "export PATH=\"\$HOME/.gem/ruby/2.3.0/bin:\$PATH\"" > $1/.profile.d/ruby.sh
 
 npm install -g grunt-contrib-compass
 ##grunt build
