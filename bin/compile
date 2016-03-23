@@ -287,25 +287,28 @@ rm -r $1/app/demotool/dist/
 #grunt build
 #cd ../
 
-cd $1/app/demotool/
+#
+# DT
+#
 
-echo Install npm dependencies...
+#cd $1/app/demotool/
+#echo Install npm dependencies...
+#npm install
+#echo Install bower dependencies...
+#bower install
+#echo Running grunt build tool \for client service...
+#grunt build
 
-npm install
+#
+# DT
+#
 
-echo Install bower dependencies...
-
-bower install
-
-echo Running grunt build tool \for client service...
-
-grunt build
 #cd ../
 
 #cd $1/app/tagpreview/
 #echo Running grunt build tool \for tagpreview...
 #grunt build
-cd ../../
+#cd ../../
 
 echo Running grunt build tool \for console...
 grunt build
@@ -313,12 +316,20 @@ grunt build
 #echo Copying dist SS...
 #cp -avR $1/app/selfservice/dist $1/dist/selfservice
 
-echo Copying dist clientservice...
-cp -avR $1/app/demotool/dist $1/dist/demotool
-cp -avR $1/app/demotool/app/assets $1/dist/demotool/assets
-mkdir -p $1/dist/demotool/app/
-cp -avR $1/app/demotool/app/assets $1/dist/demotool/app/
-cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_components/intl-tel-input
+#
+# DT
+#
+
+#echo Copying dist clientservice...
+#cp -avR $1/app/demotool/dist $1/dist/demotool
+#cp -avR $1/app/demotool/app/assets $1/dist/demotool/assets
+#mkdir -p $1/dist/demotool/app/
+#cp -avR $1/app/demotool/app/assets $1/dist/demotool/app/
+#cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_components/intl-tel-input
+
+#
+# DT
+#
 
 #echo Copying dist externaltagpreview...
 #cp -avR app/tagpreview/dist dist/tagpreview
