@@ -206,8 +206,8 @@ echo "Debug point here"
 echo "Debug point here"
 
 
-#PATH=/var/lib/gems/2.3/bin:$PATH
-echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
+PATH=/var/lib/gems/2.3/bin:$PATH
+#echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
 ruby -v
 compass -v
 
