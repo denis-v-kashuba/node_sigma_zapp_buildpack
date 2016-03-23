@@ -265,6 +265,7 @@ grunt build
 # DT
 #
 
+cd $1
 echo Running grunt build tool \for console...
 grunt build
 
