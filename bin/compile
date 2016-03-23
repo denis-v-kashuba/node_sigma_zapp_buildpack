@@ -152,109 +152,96 @@ indent() {
 #
 
 
-#    echo "Zapp360-Sigma compilation started!" | indent
-#    echo "Zapp360-Sigma compilation started!" | indent
-#    echo "Zapp360-Sigma compilation started!" | indent
-#    echo "Zapp360-Sigma compilation started!" | indent
-#    echo "Zapp360-Sigma compilation started!" | indent
-#
-#echo "BUILD_DIR - $BUILD_DIR"
-#echo "CACHE_DIR - $CACHE_DIR"
-#echo "ENV_DIR - $ENV_DIR"
-#
-#    echo "Zapp360-Sigma compilation started!" | indent
-#    echo "Zapp360-Sigma compilation started!" | indent
-#    echo "Zapp360-Sigma compilation started!" | indent
-#    echo "Zapp360-Sigma compilation started!" | indent
-#    echo "Zapp360-Sigma compilation started!" | indent
-#
-#npm install -g bower grunt-cli grunt gulp
-#npm install bower grunt-cli grunt gulp
-##sudo npm install -g bower grunt-cli gulp
-##sudo npm install -g generator-angular
-##npm install
-##bower install
-#
-#echo "Debug point here"
-#echo "Debug point here"
-#echo "Debug point here"
-#echo "Debug point here"
-#
-#ruby -v
-#gem update --system && gem install compass
-#
-#echo "Debug point here"
-#echo "Debug point here"
-#echo "Debug point here"
-#echo "Debug point here"
-#
-##sudo gem update --system
-##sudo gem install compass
-##sudo npm install -g grunt-contrib-compass
-#gem update --system
-##gem install sass
-#gem install -n /usr/local/bin compass
-#npm install -g grunt-contrib-compass
-##grunt build
-##grunt install
-#npm install --save gifsicle
-#npm install grunt-contrib-imagemin
-#
+    echo "Zapp360-Sigma compilation started!" | indent
+    echo "Zapp360-Sigma compilation started!" | indent
+    echo "Zapp360-Sigma compilation started!" | indent
+    echo "Zapp360-Sigma compilation started!" | indent
+    echo "Zapp360-Sigma compilation started!" | indent
+
+echo "BUILD_DIR - $BUILD_DIR"
+echo "CACHE_DIR - $CACHE_DIR"
+echo "ENV_DIR - $ENV_DIR"
+
+    echo "Zapp360-Sigma compilation started!" | indent
+    echo "Zapp360-Sigma compilation started!" | indent
+    echo "Zapp360-Sigma compilation started!" | indent
+    echo "Zapp360-Sigma compilation started!" | indent
+    echo "Zapp360-Sigma compilation started!" | indent
+
+npm install -g bower grunt-cli grunt gulp
+npm install bower grunt-cli grunt gulp
+#sudo npm install -g bower grunt-cli gulp
+#sudo npm install -g generator-angular
 #npm install
 #bower install
-##grunt build
-#
-#
-#echo "Debug point here"
-#echo "Debug point here"
-#echo "Debug point here"
-#echo "Debug point here"
-#
-#
-##apt-get install ruby-compass
-#
-##PATH=/var/lib/gems/2.3/bin:$PATH
-##echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
-#ruby -v
-#compass -v
-#
-#echo "Debug point here"
-#echo "Debug point here"
-#echo "Debug point here"
-#echo "Debug point here"
+
+#sudo gem update --system
+#sudo gem install compass
+#sudo npm install -g grunt-contrib-compass
+gem update --system
+#gem install sass
+gem install -n /usr/local/bin compass
+npm install -g grunt-contrib-compass
+#grunt build
+#grunt install
+npm install --save gifsicle
+npm install grunt-contrib-imagemin
+
+npm install
+bower install
+#grunt build
+
+
+echo "Debug point here"
+echo "Debug point here"
+echo "Debug point here"
+echo "Debug point here"
+
+
+#apt-get install ruby-compass
+
+#PATH=/var/lib/gems/2.3/bin:$PATH
+#echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
+ruby -v
+compass -v
+
+echo "Debug point here"
+echo "Debug point here"
+echo "Debug point here"
+echo "Debug point here"
 
 #
 #
 #
 
-
-sh $1/build-debug.sh
-
-
-cache_build() {
-  local cache_directories=$(get_cache_directories)
-
-  echo "Clearing previous node cache"
-  clear_cache
-  if ! ${NODE_MODULES_CACHE:-true}; then
-    echo "Skipping cache save (disabled by config)"
-  elif [ "$cache_directories" == "" ]; then
-    echo "Saving 2 cacheDirectories (default):"
-    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" "$DEFAULT_CACHE"
-  else
-    echo "Saving $(echo $cache_directories | wc -w | xargs) cacheDirectories (package.json):"
-    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
-  fi
-  save_signature
-}
-
-header "Caching build"
-cache_build | output "$LOG_FILE"
-
-summarize_build() {
-  cd $BUILD_DIR
-  (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
-}
-
-header "Build succeeded!"
-summarize_build | output "$LOG_FILE"
+#
+#sh $1/build-debug.sh
+#
+#
+#cache_build() {
+#  local cache_directories=$(get_cache_directories)
+#
+#  echo "Clearing previous node cache"
+#  clear_cache
+#  if ! ${NODE_MODULES_CACHE:-true}; then
+#    echo "Skipping cache save (disabled by config)"
+#  elif [ "$cache_directories" == "" ]; then
+#    echo "Saving 2 cacheDirectories (default):"
+#    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" "$DEFAULT_CACHE"
+#  else
+#    echo "Saving $(echo $cache_directories | wc -w | xargs) cacheDirectories (package.json):"
+#    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
+#  fi
+#  save_signature
+#}
+#
+#header "Caching build"
+#cache_build | output "$LOG_FILE"
+#
+#summarize_build() {
+#  cd $BUILD_DIR
+#  (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
+#}
+#
+#header "Build succeeded!"
+#summarize_build | output "$LOG_FILE"
