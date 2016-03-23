@@ -291,13 +291,13 @@ rm -r $1/app/demotool/dist/
 # DT
 #
 
-#cd $1/app/demotool/
-#echo Install npm dependencies...
-#npm install
-#echo Install bower dependencies...
-#bower install
-#echo Running grunt build tool \for client service...
-#grunt build
+cd $1/app/demotool/
+echo Install npm dependencies...
+npm install
+echo Install bower dependencies...
+bower install
+echo Running grunt build tool \for client service...
+grunt build
 
 #
 # DT
@@ -320,12 +320,12 @@ grunt build
 # DT
 #
 
-#echo Copying dist clientservice...
-#cp -avR $1/app/demotool/dist $1/dist/demotool
-#cp -avR $1/app/demotool/app/assets $1/dist/demotool/assets
-#mkdir -p $1/dist/demotool/app/
-#cp -avR $1/app/demotool/app/assets $1/dist/demotool/app/
-#cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_components/intl-tel-input
+echo Copying dist clientservice...
+cp -avR $1/app/demotool/dist $1/dist/demotool
+cp -avR $1/app/demotool/app/assets $1/dist/demotool/assets
+mkdir -p $1/dist/demotool/app/
+cp -avR $1/app/demotool/app/assets $1/dist/demotool/app/
+cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_components/intl-tel-input
 
 #
 # DT
@@ -341,8 +341,8 @@ grunt build
 # DT
 #
 
-#echo Copying index clientservice...
-#cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
+echo Copying index clientservice...
+cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
 
 #
 # DT
