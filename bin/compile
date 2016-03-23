@@ -247,39 +247,39 @@ rm -r $1/dist/
 rm -r $1/app/demotool/dist/
 #rm -r app/tagpreview/dist/
 
-echo Running jshint...
-
-jshintFILES="$1/server/controllers/
-$1/server/izolib/
-$1/server/lib
-$1/server/routes
-$1/app/scripts/
-$1/app/thirdParty
-$1/app/demotool/app/scripts
-$1/app/demotool/app/thirdParty"
-for f in $jshintFILES
-do
-    var=$(jshint "$f" | tail -1)
-    echo "
-    !+!
-    !+!
-    !+!+!
-    !+!+!+!
-    !+!+!+!+!
-    !+!+!+!+!+!
-    !+!+!+!+!+!+!
-    "
-    echo "!+!+!+!+!+!+!+! $var !+!+!+!+!+!+!+! in $f folder"
-    echo "
-    !+!+!+!+!+!+!
-    !+!+!+!+!+!
-    !+!+!+!+!
-    !+!+!+!
-    !+!+!
-    !+!
-    !+!
-    "
-done
+#echo Running jshint...
+#
+#jshintFILES="$1/server/controllers/
+#$1/server/izolib/
+#$1/server/lib
+#$1/server/routes
+#$1/app/scripts/
+#$1/app/thirdParty
+#$1/app/demotool/app/scripts
+#$1/app/demotool/app/thirdParty"
+#for f in $jshintFILES
+#do
+#    var=$(jshint "$f" | tail -1)
+#    echo "
+#    !+!
+#    !+!
+#    !+!+!
+#    !+!+!+!
+#    !+!+!+!+!
+#    !+!+!+!+!+!
+#    !+!+!+!+!+!+!
+#    "
+#    echo "!+!+!+!+!+!+!+! $var !+!+!+!+!+!+!+! in $f folder"
+#    echo "
+#    !+!+!+!+!+!+!
+#    !+!+!+!+!+!
+#    !+!+!+!+!
+#    !+!+!+!
+#    !+!+!
+#    !+!
+#    !+!
+#    "
+#done
 
 echo Running grunt build tool \for self service...
 
