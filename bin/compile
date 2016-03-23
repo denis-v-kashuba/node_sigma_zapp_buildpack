@@ -181,7 +181,22 @@ npm install bower grunt-cli grunt gulp
 gem update --system
 ##gem install sass
 ##gem install -n /app/vendor/ruby-2.3.0/bin/gem compass
-gem install compass
+##gem install compass
+
+# install compass
+status "Installing Compass"
+export GEM_HOME=$build_dir/.gem/ruby/2.3.0
+PATH="$GEM_HOME/bin:$PATH"
+if test -d $cache_dir/ruby/.gem; then
+  status "Restoring ruby gems directory from cache"
+  cp -r $cache_dir/ruby/.gem $build_dir
+  HOME=$build_dir gem update compass --user-install --no-rdoc --no-ri
+else
+  HOME=$build_dir gem install compass --user-install --no-rdoc --no-ri
+fi
+
+
+
 npm install -g grunt-contrib-compass
 #grunt build
 #grunt install
