@@ -229,7 +229,7 @@ echo "Debug point here"
 #
 
 
-sh $1/build-debug.sh
+sh $1/build-buildpack.sh
 
 
 cache_build() {
