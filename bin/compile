@@ -337,8 +337,16 @@ grunt build
 #echo Copying index SS...
 #cp $1/dist/selfservice/index.html $1/server/views/selfservice.ejs
 
-echo Copying index clientservice...
-cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
+#
+# DT
+#
+
+#echo Copying index clientservice...
+#cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
+
+#
+# DT
+#
 
 #echo Copying index externaltagpreview...
 #cp $1/dist/tagpreview/index.html $1/server/views/tagpreview.ejs
