@@ -188,7 +188,7 @@ echo "Debug point here"
 #sudo gem install compass
 #sudo npm install -g grunt-contrib-compass
 gem update --system
-gem install sass
+#gem install sass
 gem install -n /usr/local/bin compass
 npm install -g grunt-contrib-compass
 #grunt build
