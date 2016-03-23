@@ -184,22 +184,20 @@ gem update --system
 ##gem install compass
 
 # install compass
-status "Installing Compass"
-export GEM_HOME=$build_dir/.gem/ruby/2.3.0
+echo "Installing Compass"
+export GEM_HOME=$1/.gem/ruby/2.3.0
 PATH="$GEM_HOME/bin:$PATH"
-if test -d $cache_dir/ruby/.gem; then
-  status "Restoring ruby gems directory from cache"
-  cp -r $cache_dir/ruby/.gem $build_dir
-  HOME=$build_dir gem update compass --user-install --no-rdoc --no-ri
-else
-  HOME=$build_dir gem install compass --user-install --no-rdoc --no-ri
-fi
+HOME=$1 gem install compass --user-install --no-rdoc --no-ri
 
 
+echo "Building runtime environment"
+mkdir -p $1/.profile.d
+echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
+echo "export PATH=\"\$HOME/.gem/ruby/2.3.0/bin:\$PATH\"" > $build_dir/.profile.d/ruby.sh
 
 npm install -g grunt-contrib-compass
-#grunt build
-#grunt install
+##grunt build
+##grunt install
 npm install --save gifsicle
 npm install grunt-contrib-imagemin
 
@@ -214,10 +212,10 @@ echo "Debug point here"
 echo "Debug point here"
 
 
-#apt-get install ruby-compass
+##apt-get install ruby-compass
 
-PATH=/app/vendor/ruby-2.3.0/bin/gem:$PATH
-#echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
+##PATH=/app/vendor/ruby-2.3.0/bin/gem:$PATH
+##echo "PATH=\$PATH:/var/lib/gems/2.3/bin:\$HOME/.gem/ruby/2.3/bin" >> /etc/profile.d/rubygems2.3.sh
 ruby -v
 compass -v
 
