@@ -281,17 +281,23 @@ rm -r $1/app/demotool/dist/
 #    "
 #done
 
-echo Running grunt build tool \for self service...
+#echo Running grunt build tool \for self service...
 
 #cd $1/app/selfservice/
 #grunt build
 #cd ../
 
 cd $1/app/demotool/
-echo Running grunt build tool \for client service...
+
+echo Install npm dependencies...
 
 npm install
+
+echo Install bower dependencies...
+
 bower install
+
+echo Running grunt build tool \for client service...
 
 grunt build
 #cd ../
