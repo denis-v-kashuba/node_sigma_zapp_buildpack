@@ -172,7 +172,8 @@ echo "export PATH=\"\$HOME/.gem/ruby/2.3.0/bin:\$PATH\"" > $1/.profile.d/ruby.sh
 
 npm install -g grunt-contrib-compass
 
-npm install -g jshint
+##npm install -g jshint
+npm install -g eslint
 
 ##grunt build
 ##grunt install
@@ -212,8 +213,8 @@ echo "Debug point here"
 ##sh $1/build-buildpack.sh
 
 echo Running grunt build tool...
-rm -r $1/dist/
-rm -r $1/app/demotool/dist/
+rm -rf $1/dist/
+rm -rf $1/app/demotool/dist/
 
 #echo Running jshint...
 #
