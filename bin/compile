@@ -137,21 +137,15 @@ indent() {
 }
 
 
-    echo "Zapp360-Sigma compilation started!" | indent
-    echo "Zapp360-Sigma compilation started!" | indent
-    echo "Zapp360-Sigma compilation started!" | indent
-    echo "Zapp360-Sigma compilation started!" | indent
-    echo "Zapp360-Sigma compilation started!" | indent
 
-echo "BUILD_DIR - $BUILD_DIR"
-echo "CACHE_DIR - $CACHE_DIR"
-echo "ENV_DIR - $ENV_DIR"
 
-    echo "Zapp360-Sigma compilation started!" | indent
-    echo "Zapp360-Sigma compilation started!" | indent
-    echo "Zapp360-Sigma compilation started!" | indent
-    echo "Zapp360-Sigma compilation started!" | indent
-    echo "Zapp360-Sigma compilation started!" | indent
+    zappheader ")(*)(&)*^(%&(*%*&()*&)(&(*%&*^%(^^((*&)(* - Zapp360-Sigma compilation started!" | indent
+
+zappheader "BUILD_DIR - $BUILD_DIR"
+zappheader "CACHE_DIR - $CACHE_DIR"
+zappheader "ENV_DIR - $ENV_DIR"
+
+    zappheader ")(*)(&)*^(%&(*%*&()*&)(&(*%&*^%(^^((*&)(* - Zapp360-Sigma compilation started!" | indent
 
 npm install -g bower grunt-cli grunt gulp
 npm install bower grunt-cli grunt gulp
@@ -159,16 +153,16 @@ npm install bower grunt-cli grunt gulp
 gem update --system
 
 # install compass
-echo "Installing Compass"
+zappheader "Installing Compass"
 export GEM_HOME=$1/.gem/ruby/2.3.0
 PATH="$GEM_HOME/bin:$PATH"
 HOME=$1 gem install compass --user-install --no-rdoc --no-ri
 
 
-echo "Building runtime environment"
+zappheader "Building runtime environment"
 mkdir -p $1/.profile.d
-echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $1/.profile.d/nodejs.sh
-echo "export PATH=\"\$HOME/.gem/ruby/2.3.0/bin:\$PATH\"" > $1/.profile.d/ruby.sh
+zappheader "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $1/.profile.d/nodejs.sh
+zappheader "export PATH=\"\$HOME/.gem/ruby/2.3.0/bin:\$PATH\"" > $1/.profile.d/ruby.sh
 
 npm install -g grunt-contrib-compass
 
@@ -185,26 +179,14 @@ bower install
 #grunt build
 
 
-echo "Debug point here"
-echo "Debug point here"
-echo "Debug point here"
-echo "Debug point here"
-
+zappheader "Debug point here (ruby + compass)"
 
 ruby -v
 compass -v
 
-echo "Debug point here"
-echo "Debug point here"
-echo "Debug point here"
-echo "Debug point here"
+zappheader "Debug point here (node)"
 
 node -v
-
-echo "Debug point here"
-echo "Debug point here"
-echo "Debug point here"
-echo "Debug point here"
 
 #
 #
@@ -212,7 +194,8 @@ echo "Debug point here"
 
 ##sh $1/build-buildpack.sh
 
-echo Running grunt build tool...
+zappheader Running ZAPP-grunt build tool...
+
 rm -rf $1/dist/
 rm -rf $1/app/demotool/dist/
 
@@ -255,7 +238,7 @@ rm -rf $1/app/demotool/dist/
 #
 
 cd $1
-echo Running grunt build tool \for console...
+zappheader Running grunt build tool \for console...
 grunt build
 
 #
@@ -263,18 +246,18 @@ grunt build
 #
 
 cd $1/app/demotool/
-echo Install npm dependencies...
+zappheader Install npm dependencies...
 npm install --quiet --production
-echo Install bower dependencies...
+zappheader Install bower dependencies...
 bower install
-echo Running grunt build tool \for client service...
+zappheader Running grunt build tool \for client service...
 grunt build
 
 #
 # DT
 #
 
-echo Copying dist clientservice...
+zappheader Copying dist clientservice...
 cp -avR $1/app/demotool/dist $1/dist/demotool
 cp -avR $1/app/demotool/app/assets $1/dist/demotool/assets
 mkdir -p $1/dist/demotool/app/
@@ -289,33 +272,33 @@ cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_c
 # DT
 #
 
-echo Copying index clientservice...
+zappheader Copying index clientservice...
 cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
 
 #
 # DT
 #
 
-echo Copying index...
+zappheader Copying index...
 cp $1/dist/index.html $1/server/views/index.ejs
 
-echo Copying login...
+zappheader Copying login...
 cp $1/dist/login.html $1/server/views/login.ejs
 
-echo Copying reset...
+zappheader Copying reset...
 cp $1/dist/reset.html $1/server/views/reset.ejs
 
-echo Copying forgot...
+zappheader Copying forgot...
 cp $1/dist/forgot.html $1/server/views/forgot.ejs
 
-echo Copying request-access...
+zappheader Copying request-access...
 cp $1/dist/request-access.html $1/server/views/request-access.ejs
 
-echo Copying reset-sent...
+zappheader Copying reset-sent...
 cp $1/dist/reset-sent.html $1/server/views/reset-sent.ejs
 
 # izo validators
-echo Copying validators...
+zappheader Copying validators...
 cp $1/app/thirdParty/validators/company.js $1/server/izolib/validators/company.js
 cp $1/app/thirdParty/validators/campaign.js $1/server/izolib/validators/campaign.js
 cp $1/app/thirdParty/validators/user.js $1/server/izolib/validators/user.js

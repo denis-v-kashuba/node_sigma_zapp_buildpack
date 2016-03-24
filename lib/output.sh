@@ -18,6 +18,19 @@ header() {
   echo "-----> $*"
 }
 
+zappheader() {
+  echo ""
+  echo "-> $*"
+  echo "--> $*"
+  echo "---> $*"
+  echo "----> $*"
+  echo "-----> $*"
+  echo "----> $*"
+  echo "---> $*"
+  echo "--> $*"
+  echo "-> $*"
+}
+
 error() {
   echo " !     $*" >&2
   echo ""
