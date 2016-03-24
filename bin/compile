@@ -180,7 +180,7 @@ npm install -g eslint
 npm install --save gifsicle
 npm install grunt-contrib-imagemin
 
-npm install
+npm install --quiet --production
 bower install
 #grunt build
 
@@ -264,7 +264,7 @@ grunt build
 
 cd $1/app/demotool/
 echo Install npm dependencies...
-npm install
+npm install --quiet --production
 echo Install bower dependencies...
 bower install
 echo Running grunt build tool \for client service...
