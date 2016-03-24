@@ -254,20 +254,20 @@ rm -rf $1/app/demotool/dist/
 # DT
 #
 
-cd $1/app/demotool/
-echo Install npm dependencies...
-npm install
-echo Install bower dependencies...
-bower install
-echo Running grunt build tool \for client service...
+cd $1
+echo Running grunt build tool \for console...
 grunt build
 
 #
 # DT
 #
 
-cd $1
-echo Running grunt build tool \for console...
+cd $1/app/demotool/
+echo Install npm dependencies...
+npm install
+echo Install bower dependencies...
+bower install
+echo Running grunt build tool \for client service...
 grunt build
 
 #
@@ -322,30 +322,30 @@ cp $1/app/thirdParty/validators/user.js $1/server/izolib/validators/user.js
 cp $1/app/thirdParty/validators/advertiser.js $1/server/izolib/validators/advertiser.js
 
 
-#cache_build() {
-#  local cache_directories=$(get_cache_directories)
-#
-#  echo "Clearing previous node cache"
-#  clear_cache
-#  if ! ${NODE_MODULES_CACHE:-true}; then
-#    echo "Skipping cache save (disabled by config)"
-#  elif [ "$cache_directories" == "" ]; then
-#    echo "Saving 2 cacheDirectories (default):"
-#    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" "$DEFAULT_CACHE"
-#  else
-#    echo "Saving $(echo $cache_directories | wc -w | xargs) cacheDirectories (package.json):"
-#    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
-#  fi
-#  save_signature
-#}
-#
-#header "Caching build"
-#cache_build | output "$LOG_FILE"
-#
-#summarize_build() {
-#  cd $BUILD_DIR
-#  (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
-#}
-#
-#header "Build succeeded!"
-#summarize_build | output "$LOG_FILE"
+cache_build() {
+  local cache_directories=$(get_cache_directories)
+
+  echo "Clearing previous node cache"
+  clear_cache
+  if ! ${NODE_MODULES_CACHE:-true}; then
+    echo "Skipping cache save (disabled by config)"
+  elif [ "$cache_directories" == "" ]; then
+    echo "Saving 2 cacheDirectories (default):"
+    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" "$DEFAULT_CACHE"
+  else
+    echo "Saving $(echo $cache_directories | wc -w | xargs) cacheDirectories (package.json):"
+    save_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
+  fi
+  save_signature
+}
+
+header "Caching build"
+cache_build | output "$LOG_FILE"
+
+summarize_build() {
+  cd $BUILD_DIR
+  (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
+}
+
+header "Build succeeded!"
+summarize_build | output "$LOG_FILE"
