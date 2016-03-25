@@ -246,23 +246,23 @@ grunt build
 #
 
 cd $1/app/demotool/
-zappheader Install npm dependencies...
-npm install --quiet --production
-zappheader Install bower dependencies...
-bower install
-zappheader Running grunt build tool \for client service...
-grunt build
+#zappheader Install npm dependencies...
+#npm install --quiet --production
+#zappheader Install bower dependencies...
+#bower install
+#zappheader Running grunt build tool \for client service...
+#grunt build
 
 #
 # DT
 #
 
 zappheader Copying dist clientservice...
-cp -avR $1/app/demotool/dist $1/dist/demotool
-cp -avR $1/app/demotool/app/assets $1/dist/demotool/assets
-mkdir -p $1/dist/demotool/app/
-cp -avR $1/app/demotool/app/assets $1/dist/demotool/app/
-cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_components/intl-tel-input
+#cp -avR $1/app/demotool/dist $1/dist/demotool
+#cp -avR $1/app/demotool/app/assets $1/dist/demotool/assets
+#mkdir -p $1/dist/demotool/app/
+#cp -avR $1/app/demotool/app/assets $1/dist/demotool/app/
+#cp -avR $1/app/demotool/bower_components/intl-tel-input $1/dist/demotool/bower_components/intl-tel-input
 
 #
 # DT
