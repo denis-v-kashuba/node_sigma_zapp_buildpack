@@ -148,7 +148,7 @@ zappheader "ENV_DIR - $ENV_DIR"
     zappheader ")(*)(&)*^(%&(*%*&()*&)(&(*%&*^%(^^((*&)(* - Zapp360-Sigma compilation started!" | indent
 
 npm install -g bower grunt-cli grunt gulp
-npm install bower grunt-cli grunt gulp
+##npm install bower grunt-cli grunt gulp
 
 gem update --system
 
