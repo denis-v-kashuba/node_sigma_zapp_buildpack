@@ -273,7 +273,7 @@ zappheader Copying dist clientservice...
 #
 
 zappheader Copying index clientservice...
-cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
+#cp $1/dist/demotool/index.html $1/server/views/clientservice.ejs
 
 #
 # DT
